@@ -5,52 +5,37 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/inro_bg"
+    style="@style/splashScreenBg"
     tools:context=".IntroActivity">
 
     <ImageView
         android:id="@+id/intro_ic"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.28"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/into_ic"
+        style="@style/splashScreenLogo"
+        android:adjustViewBounds="true"
 
         />
 
 
     <ImageView
         android:id="@+id/route_logo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/route_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toTopOf="@+id/intro_ic"
-        android:adjustViewBounds="true"
-
-
-        app:layout_constraintVertical_bias="0.949" />
-
-    <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Supervised by Mohamed Nabil"
-        android:textColor="@color/gold"
+        android:src="@drawable/signature"
+        android:adjustViewBounds="true"
+        app:layout_constraintWidth_percent="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="@id/route_logo"
-        android:layout_marginTop="80dp"
-        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
 
+       />
 
-        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
