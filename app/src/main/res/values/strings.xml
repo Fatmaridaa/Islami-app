@@ -3,4 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tasbehat">عدد التسبيحات</string>
+    <string name="radio">الراديو</string>
+    <string name="tasbeh">التسبيح</string>
+    <string name="ahades">الأحاديث</string>
+    <string name="quran">القرآن</string>
+    <string name="title_txt">إسلامي</string>
 </resources>

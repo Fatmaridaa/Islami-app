@@ -12,6 +12,13 @@ class IntroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro)
 
+
+
+        android.os.Handler().postDelayed({
+
+            
+        },3000)
+
         android.os.Handler(Looper.getMainLooper()).postDelayed({
 
             val intent = Intent(this , bottomNavBarActivity::class.java)

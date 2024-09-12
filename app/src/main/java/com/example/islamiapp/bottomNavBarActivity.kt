@@ -1,46 +1,61 @@
 package com.example.islamiapp
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.islamiapp.databinding.ActivityBottomNavBarBinding
+import com.example.islamiapp.fragments.AhadesFragment
+import com.example.islamiapp.fragments.QuranFragment
+import com.example.islamiapp.fragments.RadioFragment
+import com.example.islamiapp.fragments.SebhaFragment
 
 class bottomNavBarActivity : AppCompatActivity() {
-    lateinit var bottomNavigationView : BottomNavigationView
+
+    lateinit var binding: ActivityBottomNavBarBinding
+    //lateinit var bottomNavigationView : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        binding = ActivityBottomNavBarBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_bottom_nav_bar)
 
-        // Set up the bottom navigation view
-        bottomNavigationView= findViewById(R.id.bottom_navbar)
-        bottomNavigationView.setOnNavigationItemSelectedListener(navListener)
 
-        // Set the initial fragment when the activity loads
+        // initialFragment
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, RadioFragment())
-                .commit()
-        }
-    }
-
-    private val navListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        val selectedFragment: Fragment = when (item.itemId) {
-            R.id.nav_radio -> RadioFragment()
-            R.id.nav_sebha -> SebhaFragment()
-            R.id.nav_hades -> AhadesFragment()
-            R.id.nav_quran -> QuranFragment()
-            else -> return@OnNavigationItemSelectedListener false
+            showFragment(QuranFragment())
         }
 
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
-        if (currentFragment?.javaClass != selectedFragment.javaClass) {
+
+        binding.bottomNavbar.setOnNavigationItemSelectedListener{
+
+            when(it.itemId){
+                R.id.nav_quran ->showFragment(QuranFragment())
+                R.id.nav_hades ->showFragment(AhadesFragment())
+                R.id.nav_sebha ->showFragment(SebhaFragment())
+                R.id.nav_radio ->showFragment(RadioFragment())
+
+
+            }
+            return@setOnNavigationItemSelectedListener true
+        }
+
+    }
+
+
+    fun showFragment(fragment: Fragment){
+
+        val currentFragment = supportFragmentManager.findFragmentById(binding.fragmentContainer.id)
+        if (currentFragment?.javaClass != fragment.javaClass){
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, selectedFragment)
+                .replace(binding.fragmentContainer.id,fragment)
+                .addToBackStack(null)
                 .commit()
         }
-        true
+
     }
+
 }
