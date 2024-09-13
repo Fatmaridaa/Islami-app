@@ -49,4 +49,36 @@
         <item name="android:background">@color/yellow</item>
     </style>
 
+
+    <!--    sebha fragment styles-->
+
+
+    <style name="sebhaHeadStyle">
+        <item name="android:src">@drawable/sebha_head_dark</item>
+    </style>
+
+
+    <style name="sebhaBodyStyle">
+
+        <item name="android:src">@drawable/sebha_body_dark</item>
+    </style>
+
+
+    <style name="numberOfTasbehStyle">
+
+        <item name="android:backgroundTint">@color/blue_dark</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+
+    <style name="TasbehStyle">
+
+        <item name="android:backgroundTint">@color/yellow</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+
+
 </resources>

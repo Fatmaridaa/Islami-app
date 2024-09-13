@@ -48,7 +48,43 @@
         <item name="android:src">@drawable/quran_img</item>
     </style>
 
+
     <style name="linesStyle">
         <item name="android:background">@color/gold</item>
     </style>
+
+
+<!--    sebha fragment styles-->
+
+
+    <style name="sebhaHeadStyle">
+        <item name="android:src">@drawable/sebha_head</item>
+    </style>
+
+
+    <style name="sebhaBodyStyle">
+
+        <item name="android:src">@drawable/sebha_body</item>
+    </style>
+
+
+    <style name="numberOfTasbehStyle">
+
+        <item name="android:backgroundTint">@color/light_gold</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+
+    <style name="TasbehStyle">
+
+        <item name="android:backgroundTint">@color/gold</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+
+
+
+
 </resources>
