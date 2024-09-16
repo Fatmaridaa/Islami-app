@@ -2,10 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_opacity80">#CCFFFFFF</color>
     <color name="gold">#B7935F</color>
     <color name="gold_variant">#816A48</color>
     <color name="light_gold">#c9b496</color>
     <color name="yellow">#FACC1D</color>
 
     <color name="blue_dark">#141A2E</color>
+    <color name="blue_dark_opacity80">#CC141A2E</color>
 </resources>

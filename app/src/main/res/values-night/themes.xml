@@ -80,5 +80,29 @@
     </style>
 
 
+    <!-- soura content themes  -->
+
+
+    <style name="backButtonStyle">
+        <item name="android:src">@drawable/ic_back_dark</item>
+    </style>
+
+
+
+    <style name="playButtonStyle">
+        <item name="android:src">@drawable/play_button_dark</item>
+    </style>
+
+    <style name="souraContentTextStyle">
+
+        <item name="android:textColor">@color/yellow</item>
+    </style>
+
+
+    <style name="verses_background">
+        <item name="android:background">@drawable/verses_dark_bg</item>
+    </style>
+
+
 
 </resources>
