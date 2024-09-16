@@ -3,6 +3,9 @@ package com.example.islamiapp
 class constants {
 
     companion object {
+
+        val soura_name_extra = "soura_name"
+        val soura_position_extra = "soura_position"
         var soura = listOf(
             "الفاتحه",
             "البقرة",

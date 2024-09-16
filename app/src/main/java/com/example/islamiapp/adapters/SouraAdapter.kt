@@ -1,18 +1,18 @@
-package com.example.islamiapp
+package com.example.islamiapp.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.islamiapp.callbacks.onSouraClickListner
+import com.example.islamiapp.dataClass
 import com.example.islamiapp.databinding.ItemSouraNameBinding
 
 class souraAdapter (val soura : List<dataClass>) : RecyclerView.Adapter<souraAdapter.SouraViewHolder>() {
 
+    var onSouraClickListner : onSouraClickListner? = null
 
     class SouraViewHolder(val binding: ItemSouraNameBinding) : RecyclerView.ViewHolder(binding.root)
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SouraViewHolder {
 
@@ -28,6 +28,9 @@ class souraAdapter (val soura : List<dataClass>) : RecyclerView.Adapter<souraAda
         val item = soura[position]
         holder.binding.souraName.text = item.Name
         holder.binding.souraNumber.text = item.Number.toString()
+        holder.binding.souraName.setOnClickListener{
+            onSouraClickListner?.onSouraClick(item , position)
+        }
 
     }
 

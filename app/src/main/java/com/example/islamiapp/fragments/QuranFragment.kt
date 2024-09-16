@@ -1,17 +1,18 @@
 package com.example.islamiapp.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.islamiapp.R
+import com.example.islamiapp.SouraContentActivity
 import com.example.islamiapp.constants
-import com.example.islamiapp.constants.Companion.soura
 import com.example.islamiapp.dataClass
 import com.example.islamiapp.databinding.FragmentQuranBinding
-import com.example.islamiapp.souraAdapter
+import com.example.islamiapp.adapters.souraAdapter
+import com.example.islamiapp.callbacks.onSouraClickListner
 
 
 class QuranFragment : Fragment() {
@@ -41,6 +42,15 @@ class QuranFragment : Fragment() {
 
         // Initialize the adapter
         adapter = souraAdapter(souraList)
+        adapter.onSouraClickListner=object :onSouraClickListner {
+            override fun onSouraClick(soura: dataClass, position: Int) {
+                val intent = Intent(requireActivity(), SouraContentActivity ::class.java)
+                intent.putExtra(constants.soura_name_extra,soura.Name)
+                intent.putExtra(constants.soura_position_extra,position)
+                startActivity(intent)
+            }
+
+        }
 
         // Set adapter to RecyclerView
         binding.souraRecyclerView.adapter = adapter
