@@ -6,6 +6,11 @@ class constants {
 
         val soura_name_extra = "soura_name"
         val soura_position_extra = "soura_position"
+
+
+        val hades_name_extra = "hades_name"
+        val hades_content_extra = "hades_content"
+
         var soura = listOf(
             "الفاتحه",
             "البقرة",
